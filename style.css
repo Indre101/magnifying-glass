@@ -3,45 +3,9 @@
   padding: 0;
 }
 
-.images {
-
-  background-image: url(./waldo.jpg);
-  position: absolute;
-  background-size: contain;
-
-}
-
-.imageContainer {
-  width: 100%;
-  height: 100vh;
-
-}
-
-/* 
-.largerImage {
-  width: 200%;
-  height: 200vh;
-  z-index: 2;
-  clip-path: circle(50px);
-  border: 3px solid black;
-  top: 0;
-  left: 0;
-  transform: translate(-90vw, -90vh);
-
-}
-
-
-.largeimage {
-  clip-path: circle(10px at 35px 35px);
-} */
 
 
 #clipped {
   margin-bottom: 20px;
   clip-path: url(#cross);
-}
-
-
-svg {
-  border: 1px solid black;
 }
