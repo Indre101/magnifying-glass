@@ -8,9 +8,37 @@
   </head>
 
   <body>
-    <div class="images imageContainer">
-      <div class="images largerImage"></div>
-    </div>
+    <svg viewBox="0 0 1000 500">
+      <image
+        class="waldo"
+        href="./waldo.jpg"
+        height="250"
+        width="500"
+        x="250"
+        y="125"
+      ></image>
+      <g class="largeImage" clip-path="url(#clipclip)">
+        <image
+          id="clipped-image"
+          href="./waldo.jpg"
+          height="500"
+          width="1000"
+          x="0"
+          y="0"
+        ></image>
+      </g>
+      <circle
+        id="circle"
+        cx="300"
+        cy="190"
+        r="50"
+        fill="transparent"
+        stroke="red"
+      ></circle>
+      <clipPath id="clipclip">
+        <circle id="clipcircle" cx="300" cy="190" r="50" fill="red"></circle>
+      </clipPath>
+    </svg>
 
     <script src="script.js"></script>
   </body>
