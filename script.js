@@ -18,31 +18,21 @@ svg.addEventListener("mousemove", moveCircle);
 
 
 // function moveByArrows(event) {
-
 //   switch (event.keyCode) {
 //     case 83:
 //       incrementY -= 0.1;
 //       break;
-
 //     case 68:
 //       incrementX -= 0.1;
-
 //       break;
-
 //     case 87:
 //       incrementY += 0.1;
-
 //       break;
-
 //     case 65:
 //       incrementX += 0.1;
-
 //       break;
-
 //   }
-
 //   moveCircle(event)
-
 // }
 
 
@@ -59,8 +49,8 @@ function moveCircle(event) {
   clipCircle.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
 
 
-  let imageCoordinateX = 475 - (event.pageX - window.pageXOffset);
-  let imageCoordinateY = 225 - (event.pageY - window.pageYOffset);
+  let imageCoordinateX = 650 - (event.pageX - window.pageXOffset);
+  let imageCoordinateY = 350 - (event.pageY - window.pageYOffset);
   clippedImage.setAttribute("x", imageCoordinateX);
   clippedImage.setAttribute("y", imageCoordinateY);
 }
