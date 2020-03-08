@@ -49,18 +49,18 @@ svg.addEventListener("mousemove", moveCircle);
 function moveCircle(event) {
 
   // event.pageX = magnifyIngGlass.cx.baseVal.value
-  let coordinateX = (event.pageX / window.innerWidth * 1000) + incrementX;
+  // let coordinateX = (event.pageX / window.innerWidth * 1000);
   // event.pageY = magnifyIngGlass.cy.baseVal.value;
-  let coordinateY = (event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth)) + incrementY
+  // let coordinateY = (event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
 
-  magnifyIngGlass.setAttribute("cx", coordinateX);
-  magnifyIngGlass.setAttribute("cy", coordinateY);
-  clipCircle.setAttribute("cx", coordinateX);
-  clipCircle.setAttribute("cy", coordinateY);
+  magnifyIngGlass.setAttribute("cx", event.pageX / window.innerWidth * 1000);
+  magnifyIngGlass.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
+  clipCircle.setAttribute("cx", event.pageX / window.innerWidth * 1000);
+  clipCircle.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
 
 
-  let imageCoordinateX = 425 - (event.pageX - window.pageXOffset);
-  let imageCoordinateY = 150 - (event.pageY - window.pageYOffset);
+  let imageCoordinateX = 475 - (event.pageX - window.pageXOffset);
+  let imageCoordinateY = 225 - (event.pageY - window.pageYOffset);
   clippedImage.setAttribute("x", imageCoordinateX);
   clippedImage.setAttribute("y", imageCoordinateY);
 }
