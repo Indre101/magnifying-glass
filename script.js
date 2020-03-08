@@ -15,9 +15,8 @@ function moveCircle(event) {
   clipCircle.setAttribute("cx", event.pageX / window.innerWidth * 1000);
   clipCircle.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
 
-  const rect = smallImage.getBoundingClientRect();
   let coordinateX = 425 - (event.pageX - window.pageXOffset);
-  let coordinateY = 175 - (event.pageY - window.pageYOffset);
+  let coordinateY = 150 - (event.pageY - window.pageYOffset);
 
   clippedImage.setAttribute("x", coordinateX);
   clippedImage.setAttribute("y", coordinateY);
