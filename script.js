@@ -1,33 +1,24 @@
 const magnifyIngGlass = document.querySelector("#circle");
 const clipCircle = document.querySelector("#clipcircle");
 const clippedImage = document.querySelector("#clipped-image");
+const smallImage = document.querySelector(".waldo");
+const svg = document.querySelector("svg");
 
 
-magnifyIngGlass.addEventListener("mousemove", moveCircle)
+svg.addEventListener("mousemove", moveCircle)
+
 
 function moveCircle(event) {
-  event.target.setAttribute("cx", event.pageX / window.innerWidth * 1000);
-  event.target.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
+
+  magnifyIngGlass.setAttribute("cx", event.pageX / window.innerWidth * 1000);
+  magnifyIngGlass.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
   clipCircle.setAttribute("cx", event.pageX / window.innerWidth * 1000);
   clipCircle.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
 
-  let coordinateX = event.pageX / window.innerWidth;
-  let coordinateY = event.pageY / window.innerHeight
-  if (coordinateX * 1000 < 550 && coordinateY * 1000 < 300) {
-    clippedImage.setAttribute("x", coordinateX += 220);
-    clippedImage.setAttribute("y", coordinateY += 120);
+  const rect = smallImage.getBoundingClientRect();
+  let coordinateX = 425 - (event.pageX - window.pageXOffset);
+  let coordinateY = 175 - (event.pageY - window.pageYOffset);
 
-  } else if (coordinateX * 1000 < 550 && coordinateY * 1000 > 300) {
-    clippedImage.setAttribute("x", coordinateX += 220);
-    clippedImage.setAttribute("y", coordinateY -= 120);
-
-  } else if (coordinateX * 1000 > 550 && coordinateY * 1000 > 300) {
-    clippedImage.setAttribute("x", coordinateX -= 220);
-    clippedImage.setAttribute("y", coordinateY -= 120);
-
-  } else if (coordinateX * 1000 > 550 && coordinateY * 1000 < 300) {
-    clippedImage.setAttribute("x", coordinateX -= 220);
-    clippedImage.setAttribute("y", coordinateY += 120);
-
-  }
+  clippedImage.setAttribute("x", coordinateX);
+  clippedImage.setAttribute("y", coordinateY);
 }
