@@ -5,19 +5,62 @@ const smallImage = document.querySelector(".waldo");
 const svg = document.querySelector("svg");
 
 
-svg.addEventListener("mousemove", moveCircle)
+let incrementX = 0;
+let incrementY = 0;
+
+
+svg.addEventListener("mousemove", moveCircle);
+
+// window.addEventListener("keydown", moveByArrows)
+
+
+// // down , right 68, up 87, left 65;
+
+
+// function moveByArrows(event) {
+
+//   switch (event.keyCode) {
+//     case 83:
+//       incrementY -= 0.1;
+//       break;
+
+//     case 68:
+//       incrementX -= 0.1;
+
+//       break;
+
+//     case 87:
+//       incrementY += 0.1;
+
+//       break;
+
+//     case 65:
+//       incrementX += 0.1;
+
+//       break;
+
+//   }
+
+//   moveCircle(event)
+
+// }
 
 
 function moveCircle(event) {
 
-  magnifyIngGlass.setAttribute("cx", event.pageX / window.innerWidth * 1000);
-  magnifyIngGlass.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
-  clipCircle.setAttribute("cx", event.pageX / window.innerWidth * 1000);
-  clipCircle.setAttribute("cy", event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth));
+  // event.pageX = magnifyIngGlass.cx.baseVal.value
+  let coordinateX = (event.pageX / window.innerWidth * 1000) + incrementX;
+  // event.pageY = magnifyIngGlass.cy.baseVal.value;
+  let coordinateY = (event.pageY / window.innerHeight * 1000 * (window.innerHeight / window.innerWidth)) + incrementY
 
-  let coordinateX = 425 - (event.pageX - window.pageXOffset);
-  let coordinateY = 150 - (event.pageY - window.pageYOffset);
+  magnifyIngGlass.setAttribute("cx", coordinateX);
+  magnifyIngGlass.setAttribute("cy", coordinateY);
+  clipCircle.setAttribute("cx", coordinateX);
+  clipCircle.setAttribute("cy", coordinateY);
 
-  clippedImage.setAttribute("x", coordinateX);
-  clippedImage.setAttribute("y", coordinateY);
+
+  let imageCoordinateX = 425 - (event.pageX - window.pageXOffset);
+  let imageCoordinateY = 150 - (event.pageY - window.pageYOffset);
+  clippedImage.setAttribute("x", imageCoordinateX);
+  clippedImage.setAttribute("y", imageCoordinateY);
 }
