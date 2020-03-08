@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manifying glass</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <svg viewBox="0 0 1000 500" Autofocus>
-      <image
-        class="waldo"
-        href="./waldo.jpg"
-        height="250"
-        width="500"
-        x="250"
-        y="125"
-      ></image>
-      <g class="largeImage" clip-path="url(#clipclip)">
-        <image
-          id="clipped-image"
-          href="./waldo.jpg"
-          height="500"
-          width="1000"
-          x="250"
-          y="125"
-        ></image>
-      </g>
-      <circle
-        id="circle"
-        cx="300"
-        cy="190"
-        r="50"
-        fill="transparent"
-        stroke="red"
-      ></circle>
-      <clipPath id="clipclip">
-        <circle id="clipcircle" cx="300" cy="190" r="50" fill="red"></circle>
-      </clipPath>
-    </svg>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manifying glass</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <script src="script.js"></script>
-  </body>
+<body>
+  <svg viewBox="0 0 500 250" Autofocus>
+    <image class="waldo" href="./waldo.jpg" height="250" width="500"></image>
+    <g class="largeImage" clip-path="url(#clipclip)">
+      <image id="clipped-image" href="./waldo.jpg" height="500" width="1000" x="250" y="125"></image>
+    </g>
+    <circle id="circle" cx="300" cy="190" r="50" fill="transparent" stroke="red"></circle>
+    <clipPath id="clipclip">
+      <circle id="clipcircle" cx="300" cy="190" r="50" fill="red"></circle>
+    </clipPath>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
